@@ -1,0 +1,30 @@
+To begin the data processing for this project, follow these steps from data upload to visualization in Looker Studio:
+
+Upload Data to BigQuery:
+
+First, upload the raw CSV files for listing and calendar datasets into BigQuery. Ensure the tables are set up with appropriate data types for each field, especially for critical fields like date (as DATE) and price (as FLOAT or numeric type).
+Data Cleaning in BigQuery:
+
+Start by cleaning each dataset individually. In the listing table, remove any records with null values in essential columns like listing_id, room_type, host_response_time, and review_scores_value. In the calendar table, remove nulls in fields like listing_id, date, and price.
+Convert price to a numeric type if it’s not already, and confirm that date fields are in DATE format to support date-based analysis.
+Create Calculated Fields:
+
+Add calculated fields for metrics needed in analysis. For example:
+Occupied Room Indicator: This indicator assigns 1 for occupied days (when available = FALSE) and 0 for available days.
+Revenue: Calculate revenue only when a room is occupied, by multiplying the price with the Occupied Room Indicator field.
+Join the Cleaned Tables:
+
+Once both tables are cleaned, join the listing_cleaned and calendar_cleaned tables on the listing_id field. This combined table will have all the necessary data in a single place, including room type, host response time, review scores, availability, and price per date.
+Additional Aggregations (Optional):
+
+Create additional queries if needed, such as calculating daily occupancy rates, average price by room type, and average review score by response time. These aggregations can provide deeper insights during analysis.
+Import the Combined Table into Looker Studio:
+
+Connect Looker Studio to BigQuery and import the listing_calendar_combined table. Once connected, set up any required dimensions and metrics, like occupancy rate and revenue, as fields in Looker Studio.
+Build and Customize the Dashboard:
+
+In Looker Studio, create visualizations such as line charts, bar charts, tables, and scorecards to display key metrics like occupancy rate, average price, and review scores by room type and date.
+Customize the dashboard layout and add interactive controls, such as date range selectors and filters by room type or response time, to allow for dynamic data exploration.
+Final Review and Export:
+
+Once the dashboard is complete, review it to ensure all metrics are accurate and visualizations are clear. Export the dashboard as a PDF or capture screenshots for static sharing if needed.
