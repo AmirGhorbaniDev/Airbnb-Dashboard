@@ -4,6 +4,8 @@
 
 This project presents a data analysis dashboard for Airbnb listings, focusing on occupancy, pricing, response times, and review scores. The dashboard was created to help the Airbnb Customer Success team understand key metrics and trends, allowing them to optimize rental operations and enhance customer satisfaction.
 
+**Link on looker : https://lookerstudio.google.com/reporting/3ecb4697-cf48-4642-9cdd-7b6e364e966a**
+
 **Project Structure**
 dashboard/: Contains the full dashboard PDF export (Airbnb_Dashboard.pdf).
 images/: Contains individual screenshots of the dashboard's charts and visualizations, including:
